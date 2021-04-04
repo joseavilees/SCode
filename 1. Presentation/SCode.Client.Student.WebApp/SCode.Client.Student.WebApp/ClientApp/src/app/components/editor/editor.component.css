@@ -1,0 +1,12 @@
+:host {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  flex: 1;
+  background-color: #1e1e1e;
+}
+
+.my-code-editor {
+  height: calc(100vh - 24px);
+}
+

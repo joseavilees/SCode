@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Content Include="nginx\conf.d\api.scode.conf" />
+      <Content Include="nginx\conf.d\log.scode.conf" />
+      <Content Include="nginx\conf.d\scode.conf" />
+    </ItemGroup>
+
+</Project>

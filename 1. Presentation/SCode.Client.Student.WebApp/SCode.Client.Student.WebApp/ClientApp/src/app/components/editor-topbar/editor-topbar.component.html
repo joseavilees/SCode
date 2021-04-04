@@ -1,0 +1,5 @@
+<div id="nav" class="d-flex flex-row">
+  <div *ngFor="let item of getActiveFileTreeItems()">
+    <app-file-nav-item [fileTreeItem]="item"></app-file-nav-item>
+  </div>
+</div>

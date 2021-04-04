@@ -1,0 +1,27 @@
+<div id="directoryTree">
+  <div style="padding: 10px;text-transform: uppercase;">
+    <a>{{sessionService.classroomName}}</a>
+
+    <a style="float:right;" href="https://github.com/joseavilees/SCode">
+      <img src="/assets/images/github-logo.png" alt="github"
+           height="15"/>
+    </a>
+  </div>
+
+  <div class="header">INFO</div>
+
+  <div class="header-content">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="autoPilot" [(ngModel)]="sessionService.isAutoPilotEnabled">
+      <label class="form-check-label" for="autoPilot">
+        Navegación automática
+      </label>
+
+      <small class="form-text text-muted">La navegación automática abrirá los archivos que el maestro se encuentre
+        editando</small>
+    </div>
+  </div>
+
+  <div class="header">ARCHIVOS</div>
+  <app-file-tree-component></app-file-tree-component>
+</div>

@@ -1,0 +1,51 @@
+version: '3.4'
+
+services:
+  scode.webapi:
+    image: joseavilees/scode.webapi
+    container_name: scode_webapi
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - API_KEY=demokey
+    restart: unless-stopped
+    ports:
+      - "6001:80"
+
+  scode.client.student.webapp:
+    image: joseavilees/scode.client.student.webapp
+    container_name: scode_client_student_webapp
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+    restart: unless-stopped
+    ports:
+      - "6002:80"
+
+  scode.webserver:
+    image: nginx:alpine
+    container_name: scode_webserver
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+  
+  scode.seq:
+    image: datalust/seq:latest
+    container_name: scode_seq_log
+    ports:
+      - "6003:80"
+    environment:
+      ACCEPT_EULA: Y
+    restart: unless-stopped
+    volumes:
+      - ./seq-data:/data
+
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/.docker/config.json:/config.json
+    command: --interval 30 scode_webapi scode_client_student_webapp scode_webserver
+    restart: always
+

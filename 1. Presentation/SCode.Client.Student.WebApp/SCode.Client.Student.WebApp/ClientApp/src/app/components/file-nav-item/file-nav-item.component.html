@@ -1,0 +1,10 @@
+<div [ngClass]="{'active': isSelected()}" (click)="open()" class="noselect">
+
+    <span class="icon icon-file icon-{{getFileNameExtension(fileTreeItem.name)}}">
+    </span>
+
+    <span class="label">{{fileTreeItem.name}}</span>
+
+    <button class="closeBtn" (click)="close()">×</button>
+
+</div>

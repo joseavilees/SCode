@@ -1,0 +1,20 @@
+<tree-root [focused]="true" [options]="options" [nodes]="this.fileTreeService.nodes" s (activate)="onNodeClicked($event)">
+
+  <ng-template #treeNodeWrapperTemplate let-node let-index="index">
+    <div class="node-wrapper" [style.padding-left]="node.getNodePadding()">
+      <tree-node-expander [node]="node" ></tree-node-expander>
+      <div class="node-content-wrapper" [class.node-content-wrapper-active]="node.data.isActive"
+           [class.node-content-wrapper-focused]="node.isFocused" (click)="node.mouseAction('click', $event)">
+
+        <span class="icon-folder-open" *ngIf="node.data.isDirectory && node.isExpanded"></span>
+        <span class="icon-folder-close" *ngIf="node.data.isDirectory && !node.isExpanded"></span>
+
+        <span class="icon-file icon-{{getFileNameExtension(node.data.name)}}"
+              *ngIf="!node.data.isDirectory"></span>
+
+        {{node.data.name}}
+
+      </div>
+    </div>
+  </ng-template>
+</tree-root>
