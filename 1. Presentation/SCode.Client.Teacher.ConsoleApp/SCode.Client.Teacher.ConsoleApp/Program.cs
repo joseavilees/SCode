@@ -1,6 +1,5 @@
 ﻿using Serilog;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -16,16 +15,8 @@ namespace SCode.Client.Teacher.ConsoleApp
                 {
                     loggingBuilder.ClearProviders();
 
-                    var environmentName = hostContext.HostingEnvironment.EnvironmentName;
-                    var configuration = new ConfigurationBuilder()
-                        .AddJsonFile("appsettings.json")
-                        .AddJsonFile($"appsettings.{environmentName}.json",
-                            optional: true)
-                        .AddEnvironmentVariables()
-                        .Build();
-
                     var logger = new LoggerConfiguration()
-                        .ReadFrom.Configuration(configuration)
+                        .ReadFrom.Configuration(hostContext.Configuration)
                         .CreateLogger();
 
                     loggingBuilder.AddSerilog(logger, dispose: true);

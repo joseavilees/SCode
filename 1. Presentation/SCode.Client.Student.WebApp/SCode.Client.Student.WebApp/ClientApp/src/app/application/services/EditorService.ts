@@ -30,7 +30,7 @@ export class EditorService {
   }
 
   public openFile(appFileEntry: AppFileEntry) {
-    // Desactivar el archivo anterior
+    // Desactivar el archivo anterior del arbol
     if (this.selectedAppFile != null)
       this.selectedAppFile
         .isActive = false;
@@ -38,11 +38,11 @@ export class EditorService {
     // Marcar el nuevo archivo actual
     this.selectedAppFile = appFileEntry;
 
-    // Marcarlo como activo
+    // Activar el archivo actual en el arbol
     this.selectedAppFile
       .isActive= true;
 
-    // Si el archivo no existe, añadirlo
+    // Si el archivo no existe en el editor, añadirlo
     if (!this.existFile(appFileEntry))
       this.insertFile(appFileEntry);
 
@@ -59,6 +59,10 @@ export class EditorService {
       appFileEntry.isActive = false;
 
       ArrayHelper.removeItem(this.activeAppFiles, appFileEntry);
+
+      // Si es el archivo actual
+      if (appFileEntry == this.selectedAppFile)
+        this.selectedAppFile = null; // Quitarlo
     }
   }
 

@@ -79,7 +79,7 @@ namespace SCode.Client.Teacher.ConsoleApp
         {
             if (!await _accountService.Login())
             {
-                _logger.LogError("No fue posible autentificar compruebe que ha " +
+                Console.WriteLine("No fue posible autentificar compruebe que ha " +
                                  "establecido la API-Key en el archivo appSettings.json y vuelva " +
                                  "a abrir la aplicación");
 

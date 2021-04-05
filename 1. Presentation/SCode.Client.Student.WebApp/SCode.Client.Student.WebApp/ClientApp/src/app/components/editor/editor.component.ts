@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {EditorService} from "../../application/services/EditorService";
+import {AppFileEntry} from "../../domain/models/AppFileEntry";
 
 @Component({
   selector: 'app-editor',
@@ -14,8 +15,8 @@ export class EditorComponent implements OnInit {
   public getActiveFileTreeItems = () =>
     this.editorService.activeAppFiles;
 
-  public selectedAppFile = () =>
-    this.editorService.selectedAppFile;
+  public selectedAppFileContent = () =>
+    this.editorService.selectedAppFile?.content;
 
   public options = () =>
     this.editorService.options;

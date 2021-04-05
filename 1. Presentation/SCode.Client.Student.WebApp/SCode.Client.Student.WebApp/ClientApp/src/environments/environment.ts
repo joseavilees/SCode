@@ -7,9 +7,8 @@ import {NgxLoggerLevel} from "ngx-logger";
 export const environment = {
   production: false,
   scodeApiUrl: "https://localhost:8001",
-  ngxLoggerLevel : NgxLoggerLevel.TRACE
+  ngxLoggerLevel: NgxLoggerLevel.TRACE
 };
-
 
 
 /*

@@ -43,13 +43,14 @@ namespace SCode.Client.Teacher.ConsoleApp.Application.Services
                     .Content
                     .ReadFromJsonAsync<bool>();
 
-                _logger.LogDebug("API Key Válida");
-
+                if (result)
+                    _logger.LogDebug("API Key válida");
+     
                 return result;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex,
+                _logger.LogWarning(ex,
                     "No fue posible validar la API Key");
 
                 return false;

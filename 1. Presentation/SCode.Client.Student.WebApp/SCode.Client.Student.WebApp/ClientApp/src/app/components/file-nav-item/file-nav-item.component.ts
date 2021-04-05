@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {EditorService} from "../../application/services/EditorService";
 import {StringHelper} from "../../application/helpers/StringHelper";
 
@@ -7,17 +7,16 @@ import {StringHelper} from "../../application/helpers/StringHelper";
   templateUrl: './file-nav-item.component.html',
   styleUrls: ['./file-nav-item.component.css']
 })
-export class FileNavItemComponent  {
+export class FileNavItemComponent {
 
   @Input() fileTreeItem;
 
   isSelected() {
-    return this.editorService
-      .selectedAppFile.id == this.fileTreeItem.id;
+    return this.editorService.selectedAppFile != null &&
+      this.editorService.selectedAppFile.id == this.fileTreeItem.id;
   }
 
-  constructor(private editorService : EditorService)
-  {
+  constructor(private editorService: EditorService) {
 
   }
 
@@ -29,8 +28,7 @@ export class FileNavItemComponent  {
     this.editorService.closeFile(this.fileTreeItem.id);
   }
 
-  open()
-  {
+  open() {
     this.editorService.openFile(this.fileTreeItem);
   }
 }
