@@ -37,7 +37,7 @@ export class ExpandAppFileEntryParentNodesOnTreeWhenAppFileEntryChangeEventHandl
       return;
 
     if (change.appFileEntry.isDirectory ||
-      change.changeType != AppFileEntryChangeType.Changed)
+      change.changeType == AppFileEntryChangeType.Deleted)
       return;
 
     this.expandNodes(change.appFileEntry.parentId);
