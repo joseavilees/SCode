@@ -37,11 +37,10 @@ namespace SCode.WebApi.Hubs.ClassroomHub
             
             return classroom != null;
         }
-
     }
     
     /// <summary>
-    /// Almacen en memoria de las clases contenidas
+    /// Almacén en memoria de las clases contenidas
     /// en el concentrador
     /// </summary>
     public interface IClassroomRepository

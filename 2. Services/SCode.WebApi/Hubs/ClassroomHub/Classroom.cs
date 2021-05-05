@@ -26,12 +26,24 @@ namespace SCode.WebApi.Hubs.ClassroomHub
             Name = name;
         }
 
+        /// <summary>
+        /// Inicia la clase.
+        /// Se debe de indicar la conexión del docente que la inicia y la colección
+        /// de entradas de archivos actual
+        /// </summary>
+        /// <param name="teacherConnectionId"></param>
+        /// <param name="appFileEntryDtos"></param>
         public void Start(string teacherConnectionId, List<AppFileEntryDto> appFileEntryDtos)
         {
             TeacherConnectionId = teacherConnectionId;
             _appFileEntries = appFileEntryDtos;
         }
 
+        /// <summary>
+        /// Actualiza la colección de entrada de archivos con los
+        /// cambios producidos en <param name="changes"></param>
+        /// </summary>
+        /// <param name="changes"></param>
         public void UpdateAppFileEntries(List<AppFileEntryChangeDto> changes)
         {
             foreach (var change in changes)

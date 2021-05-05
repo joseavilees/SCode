@@ -14,7 +14,7 @@
 
         /// <summary>
         /// Añade una ruta si no existe
-        /// y devuelve el Id creado
+        /// y devuelve el Id de esta
         /// </summary>
         /// <param name="path"></param>
         /// <returns></returns>

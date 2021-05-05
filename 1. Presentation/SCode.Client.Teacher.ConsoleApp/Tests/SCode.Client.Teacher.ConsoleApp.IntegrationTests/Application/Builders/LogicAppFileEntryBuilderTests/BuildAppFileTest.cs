@@ -9,7 +9,7 @@ using Xunit;
 
 namespace SCode.Client.Teacher.ConsoleApp.IntegrationTests.Application.Builders.LogicAppFileEntryBuilderTests
 {
-    public class BuildAppFileTest : FunctionalTest
+    public class  BuildAppFileTest : FunctionalTest
     {
         private ILogicAppFileEntryBuilder _logicAppFileEntryBuilder;
         private List<AppFileEntry> _result;

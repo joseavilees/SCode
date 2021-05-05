@@ -58,7 +58,8 @@ namespace SCode.Client.Teacher.ConsoleApp.Application.Clients
                 return _hubConnection.SendAsync(methodName, arg1);
             
             _logger
-                .LogInformation("Se ignora la llamada a {Method} al no tener conexión con el Hub", methodName);
+                .LogInformation("Se ignora la llamada a {Method} al no tener " +
+                                "conexión con el Hub", methodName);
                 
             return Task.CompletedTask;
         }
