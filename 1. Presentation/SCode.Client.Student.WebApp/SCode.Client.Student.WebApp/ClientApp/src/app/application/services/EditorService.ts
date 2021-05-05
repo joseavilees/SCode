@@ -66,9 +66,9 @@ export class EditorService {
     }
   }
 
-  // public closeAll() {
-  //   this.activeAppFiles = new Array<AppFileEntry>();
-  // }
+  public closeAll() {
+    this.activeAppFiles = new Array<AppFileEntry>();
+  }
 
   public existFile(appFile: AppFileEntry): boolean {
     const containsAppFilePredicate = (element) =>
