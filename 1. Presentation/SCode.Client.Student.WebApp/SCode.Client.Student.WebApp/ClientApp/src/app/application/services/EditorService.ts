@@ -21,7 +21,8 @@ export class EditorService {
     theme: 'vs-dark',
     language: "java",
     automaticLayout: true,
-    readOnly: true
+    readOnly: true,
+    scrollbar: {}
   };
 
   constructor(private readonly logger: NGXLogger,
@@ -101,7 +102,29 @@ export class EditorService {
         theme: 'vs-dark',
         language: appFileLanguage,
         automaticLayout: true,
-        readOnly: true
+        readOnly: true,
+        scrollbar: {
+          // Subtle shadows to the left & top. Defaults to true.
+          useShadows: true,
+
+          // Render vertical arrows. Defaults to false.
+          verticalHasArrows: true,
+          // Render horizontal arrows. Defaults to false.
+          horizontalHasArrows: true,
+
+          // Render vertical scrollbar.
+          // Accepted values: 'auto', 'visible', 'hidden'.
+          // Defaults to 'auto'
+          vertical: 'auto',
+          // Render horizontal scrollbar.
+          // Accepted values: 'auto', 'visible', 'hidden'.
+          // Defaults to 'auto'
+          horizontal: 'auto',
+
+          verticalScrollbarSize: 22,
+          horizontalScrollbarSize: 22,
+          arrowSize: 30
+        }
       };
     }
   }
