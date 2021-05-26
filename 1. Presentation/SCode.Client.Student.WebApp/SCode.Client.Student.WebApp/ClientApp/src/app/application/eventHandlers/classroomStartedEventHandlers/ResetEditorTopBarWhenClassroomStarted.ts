@@ -16,6 +16,7 @@ export class ResetEditorTopBarWhenClassroomStarted {
   }
 
   private handle() {
-    this.editorService.closeAll();
+    // No habilitado, problema de conexión Docker
+    // this.editorService.closeAll();
   }
 }
