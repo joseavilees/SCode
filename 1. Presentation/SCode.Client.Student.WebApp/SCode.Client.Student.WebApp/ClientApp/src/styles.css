@@ -38,3 +38,12 @@ body, html {
   color: #bfbfbf!important;
 }
 
+::-webkit-scrollbar-thumb {
+  background-color: hsla(0,0%,47.5%,.3);
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+

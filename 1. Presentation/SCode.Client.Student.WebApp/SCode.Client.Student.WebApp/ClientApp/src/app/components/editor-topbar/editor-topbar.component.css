@@ -1,5 +1,11 @@
-#nav {
-  width: 100%;
-  min-height: 38px;
+:host {
+  height: 40px;
   background-color: #252526;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+}
+
+::-webkit-scrollbar {
+  height: 7px;
 }

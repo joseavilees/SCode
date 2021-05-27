@@ -153,3 +153,8 @@ tree-root .angular-tree-component-rtl .tree-children {
 tree-node-checkbox {
   padding: 1px;
 }
+
+
+::-webkit-scrollbar {
+  width: 14px;
+}
