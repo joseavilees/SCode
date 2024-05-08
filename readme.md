@@ -25,19 +25,5 @@ Es necesario indicar el nombre de la sala a la que se quiere conectar. No requie
 
 <img src="./docs-pics/apps-architecture.jpg" alt="Arquitectura de aplicaciones" />
 
-## ¿Dónde puedo conseguirlo?
-
-
-* **SCode.Api:**
-  `docker pull joseavilees/scode.webapi`
-
-
-* **SCode.Client.Student.WebApp** 
-  `docker pull joseavilees/scode.client.student.webapp`
-
-
-<!-- * **SCode.Client.Teacher.ConsoleApp** 
-  GitHub Releases -->
-
 ### Colaborar
 No dudes en contactar conmigo si quieres colaborar, reportar fallos o aportar ideas :)
