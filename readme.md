@@ -5,9 +5,7 @@ SCode es un proyecto de código abierto, que permite la sincronización de un di
 
 Nace para resolver los problemas que tiene un docente de programación, a la hora de compartir el código que escribe en su equipo con sus alumnos.
 
-
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/SljxZL7McHQ/0.jpg)](http://www.youtube.com/watch?v=SljxZL7McHQ)
-
+https://github.com/joseavilees/SCode/assets/57925314/f5ae5945-9cec-4be5-9c37-d04d98c557e7
 
 ## ¿Cómo funciona?
 SCode sincroniza los cambios realizados sobre un directorio una vez que estos archivos se guardan. Para mantener los cambios siempre sincronizados se puede configurar el auto-guardado del IDE para que guarde los cambios cada segundo.
